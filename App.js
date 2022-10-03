@@ -29,7 +29,10 @@ export default function App() {
             <Text style={isEnabled ? styles.titleTextWhite : styles.titleTextBlack}>OpenWeatherMap</Text>
             <TextInput style={isEnabled ? styles.whiteTextInput : styles.blackTextInput}
                        placeholder="Enter the PLZ you would like to view"
-                       placeholderTextColor={isEnabled ? "white" : "black"} onSubmitEditing={text => setInput(text.nativeEvent.text)}/>
+                       placeholderTextColor={isEnabled ? "white" : "black"}
+                       onSubmitEditing={text => setInput(text.nativeEvent.text)}
+                       textAlign={'center'}
+            />
             <Text style={isEnabled ? styles.white : styles.black}>Darkmode</Text>
             <StatusBar style="auto"/>
             <Switch trackColor={{false: "#767577", true: "#81b0ff"}}

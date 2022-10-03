@@ -12,8 +12,8 @@ export default function WeatherUI(props) {
                 <Card.Title/>
                 <Card.Content style = {styles.cardContent}>
                     <Title style={props.mode ? styles.white : styles.black}>{props.plz.name}</Title>
-                    <Paragraph style={props.mode ? styles.white : styles.black}>{props.plz.weather[0].description}</Paragraph>
-                    <Paragraph style={props.mode ? styles.white : styles.black}>{Math.floor(props.plz.main.temp - 273.15)}°</Paragraph>
+                    <Paragraph style={props.mode ? styles.white : styles.black}>weather: {props.plz.weather[0].description}</Paragraph>
+                    <Paragraph style={props.mode ? styles.white : styles.black}>currently: {Math.floor(props.plz.main.temp - 273.15)}°</Paragraph>
                 </Card.Content>
                 <Card.Cover source={{uri: 'https://openweathermap.org/img/w/' + props.plz.weather[0].icon + '.png'}}/>
             </Card>
@@ -26,12 +26,14 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        elevation: 3,
     },
     container2: {
         backgroundColor: '#000',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        elevation: 3,
     },
     white: {
         color: '#fff',
